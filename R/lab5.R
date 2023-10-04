@@ -59,6 +59,16 @@ kolada <- setRefClass('kolada',
                             all_city_data <<- cbind(all_city_data,kolada$new(names(city_and_id)[i])$getonecitydata()[2])
                           }
                           return(all_city_data)
+                        },
+                        
+                        meandata = function(){
+                          mevalue <- mean(one_city_data[,2], na.rm = T)
+                          cat(paste0('The average value of percentage in ',city,' is ',round(mevalue,1),'%.'))
+                        },
+                        
+                        sddata = function(){
+                          sdvalue <- sd(one_city_data[,2], na.rm = T)
+                          cat(paste0('The sd value of percentage in ',city,' is ',round(sdvalue,1),'.'))
                         }
                       )
 )
