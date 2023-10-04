@@ -1,9 +1,22 @@
 Package: lab5package
 Type: Package
-Title: What the package does (short line)
-Version: 1.0
+Title: Access and analyse the data in Kolada dataset
+Version: 0.1.0
 Date: 2023-10-04
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: c(
+    person("Lepeng", "Zhang", email = "lepzh903@student.liu.se", role = "cre"),
+    person("William", "Wijgård", email = "wilwi220@student.liu.se", role = "aut"))
+Maintainer: Lepeng Zhang <lepzh903@student.liu.se>
+Description: This package contains a RC class function that can access and analyse the data in Kolada dataset via Kolada API. Ihe data is percentage of temporary parental benefit (in terms of net days) taken out by men from 1996 to 2022.
+License: GPL
+RoxygenNote: 7.2.3
+Encoding: UTF-8
+LazyData: true
+NeedsCompilation: no
+Depends: R (>= 3.5.0)
+Imports: httr, jsonlite, methods
+
+
+
+
+
