@@ -15,8 +15,6 @@ LazyData: true
 NeedsCompilation: no
 Depends: R (>= 3.5.0)
 Imports: httr, jsonlite, methods
-
-
-
-
-
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
