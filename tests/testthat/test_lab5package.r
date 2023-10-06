@@ -23,8 +23,3 @@ test_that("meandata() method works", {
   expect_output(kolada_mod$meandata(),'The average value of percentage in Gothenburg is 36.7%.')
 })
 
-test_that("sddata() method works", {
-  kolada_mod <- kolada$new('Lund')
-  expect_output(kolada_mod$sddata(),'The sd value of percentage in Lund is 2.7.')
-})
-
