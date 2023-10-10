@@ -1,0 +1,35 @@
+---
+title: "Instructions for lab5package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Description
+This package uses the Kolada API to get data about temporary parental benefits in the Swedish cities of Stockholm, Gothenburg, Uppsala, Lund and Linköping. Kolada provides data from Swedish municipalities and the id for the data accessed with this package is N00945.
+
+## Import
+```{r setup}
+library(lab5package)
+```
+
+## Initialize
+Use lab5package::kolada("city"), where "city" is one of the cities covered within this package to get the data of that city.
+
+
+## Methods
+
+### meandata()
+Gets the mean of the percentage of temportary parental benefits for males in the city that has been initialized.
+
+### getallcitydata()
+Can be used as long as any city has been initialized. Provides a data frame of the data from all the cities covered.
