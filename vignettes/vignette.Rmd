@@ -2,7 +2,7 @@
 title: "Instructions for lab5package"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{vignette}
+  %\VignetteIndexEntry{Instructions for lab5package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 ```
 
 ## Description
-This package uses the Kolada API to get data about temporary parental benefits in the Swedish cities of Stockholm, Gothenburg, Uppsala, Lund and Linköping. Kolada provides data from Swedish municipalities and the id for the data accessed with this package is N00945.
+This package uses the Kolada API to get data about temporary parental benefits in the Swedish cities of Stockholm, Gothenburg, Uppsala, Lund and Linkoping. Kolada provides data from Swedish municipalities and the id for the data accessed with this package is N00945.
 
 ## Import
 ```{r setup}
@@ -23,13 +23,32 @@ library(lab5package)
 ```
 
 ## Initialize
-Use lab5package::kolada("city"), where "city" is one of the cities covered within this package to get the data of that city.
+Use kolada$new(city), where "city" is one of the cities covered within this package to get the data of that city. 
+```{r}
+kolada_mod <- kolada$new('Linkoping')
+```
 
 
 ## Methods
 
-### meandata()
-Gets the mean of the percentage of temportary parental benefits for males in the city that has been initialized.
+### getonecitydata()
+Can be used when a city has been initialized. Provides a data frame of the data of one city from the cities covered. The first column is period from 1996 to 2022, and the second column is the value mentioned in *Description* part.
+```{r}
+Linkoping_data <- kolada_mod$getonecitydata()
+Linkoping_data
+```
 
 ### getallcitydata()
 Can be used as long as any city has been initialized. Provides a data frame of the data from all the cities covered.
+```{r}
+kolada_mod <- kolada$new('Uppsala')
+kolada_data <- kolada_mod$getallcitydata()
+kolada_data
+```
+
+### meandata()
+Gets the mean of the percentage of temportary parental benefits for males in the city that has been initialized.
+```{r}
+kolada_mod <- kolada$new('Gothenburg')
+kolada_mod$meandata()
+```
